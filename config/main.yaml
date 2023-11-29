@@ -1,0 +1,44 @@
+data:
+  training_data:
+    path: 'data/training/step2_master.csv'
+    text_col_name: 'desc'
+    label_col_name: 'ssic'
+    source_col_name: 'source'
+    is_synthetic_col_name: 'AUGMENT_IND'
+  inference_data:
+    path: 'data/inference/SSIC Description_DOS.xlsx'
+    text_col_name: 'GBI_P_ACT'
+
+pretrained_model:
+  path: 'pretrained-model/bert-base-uncased'
+  tokenizer_max_length: 64
+
+mapping:
+  label_encoding_map:
+    path: 'model/mapping/label_encoding_map.pkl'
+  ssic_to_subsector_map:
+    path:  'model/mapping/ssic_to_subsector_map.csv'
+    ssic_col_name: 'SSIC'
+    subsector_col_name: 'SUBSECTOR'
+
+model_tuning:
+  hyperparam_search_space:
+    batch_size_range: [8, 64]
+    learning_rate_range: [2e-5, 8e-5]
+    epoch_range: [3, 6]
+    weight_decay_range: [0, 0.1]
+    frozen_layers: 0
+  finetuned_models_directory: 'model/finetuned_models'
+
+model_ensemble:
+  ensemble_model_directory: 'model/ensemble_model'
+
+model_evaluation:
+  ssic_eval_path: 'model/evaluation/ssic_classification_report_top1.csv'
+  subsector_eval_path: 'model/evaluation/subsector_classification_report_top1.csv'
+
+model_prediction:
+  ssic_preds_path: 'model_predictions/ssic_preds.csv'
+  subsector_preds_path: 'model_predictions/subsector_preds.csv'
+
+random_seed: 42
