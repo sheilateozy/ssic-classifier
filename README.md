@@ -5,7 +5,7 @@ Use the text classifier [here](https://ssic-classifier.streamlit.app/), deployed
 <img src="./assets/webapp_screenshot.png" width="700">
 
 ## About
-This project builds a text classifier to classify firms into categories of business activities (target) based on the Singapore Standard Industrial Classification (SSIC) framework, using free-text descriptions of their business activities (feature). This is done by fine-tuning and ensembling multiple pre-trained large language models (LLMs) via a model soup. 
+This project builds a text classifier to classify firms into categories of business activities (target) based on the Singapore Standard Industrial Classification (SSIC) framework, using free-text descriptions of their business activities (feature). This is done by fine-tuning and ensembling multiple pre-trained BERT models via a model soup. 
 
 This classifier aims to be employed in front-facing services by Singapore's Accounting and Corporate 
 Regulatory Authority (ACRA) to aid new firm registrants in selecting the most appropriate SSIC code.
@@ -29,7 +29,7 @@ To resolve the above problems, this project builds a text classifier to automati
 
 
 ## Data
-This project uses firm business activity descriptions for each SSIC code, from multiple sources.
+This project uses publicly available firm business activity descriptions for each SSIC code from the Department of Statistics.
 
 
 ## Project Methodology
