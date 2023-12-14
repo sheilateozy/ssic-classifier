@@ -17,7 +17,7 @@ However, 2 scenarios are common:<br>
 (i) Firms may not select the most appropriate SSIC code at the point of registration.<br>
 (ii) Firms may subsequently change their business activities and may not inform ACRA about this change.<br>
 As a result, many firms' SSIC codes do not correctly reflect their business activities.<br>
-This is a problem because the government relies on accurate firm SSIC codes for various monitoring and development purposes.<br>
+These pose a problem because the government relies on accurate firm SSIC codes for various monitoring and development purposes.<br>
 
 Previously, officers manually read through each firm's business activity descriptions that are periodically collected over time through surveys, to determine if each firm's SSIC code is still reflective of its current business activities. If not, officers manually re-assign a new SSIC code to the firm.
 
@@ -51,10 +51,10 @@ This introduces variations in sentence structure, word choice and phrasing, ther
 We use the <a href=https://huggingface.co/bert-base-uncased>bert-base-uncased model</a> on HuggingFace for transfer learning. BERT was chosen as it demonstrates state-of-the-art results when fine-tuned on a specific task even with a relatively small amount of training data. This is particularly beneficial in the context of this project, where only a limited amount of labeled data is available for training.
 
 <h3>5. Fine-tune multiple BERT models on our specific task</h3>
-We use Optuna, an open-source hyperparameter optimization framework, to fine-tune multiple BERT models with different hyperparameter configurations for learning from our training data.
+We use <i>optuna</i> to fine-tune multiple BERT models on our training data with different hyperparameter configurations.
 
 <h3>6. Ensemble the fine-tuned models via model soup methodology</h3>
-Model soup is a recent research breakthrough for combining multiple deep learning models into a single model through averaging the weights of each model, as outlined in the <a href=https://arxiv.org/abs/2203.05482>research paper</a>.<br><br>
+Model soup is a recent research breakthrough in 2022 for combining multiple deep learning models into a single model through averaging the weights of each model, as outlined in the <a href=https://arxiv.org/abs/2203.05482>research paper</a>.<br><br>
 
-We ensemble the multiple fine-tuned BERT models via this methodology to obtain an ensembled model that outperforms any single model in its "soup". This is our final model deployed.
+We ensemble the multiple fine-tuned BERT models via this methodology to obtain an ensembled model that outperforms any single model in its "soup". This is our final model.
 
